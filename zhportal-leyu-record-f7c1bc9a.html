@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 专题页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: "Georgia", "Noto Serif SC", "Times New Roman", serif;
+            color: #2e2b27;
+            line-height: 1.75;
+            padding: 0 1.5rem;
+        }
+
+        .page-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem 4rem;
+        }
+
+        /* 首页横幅 — 杂志风格题图 */
+        .hero {
+            background: #f3ede5;
+            border-left: 6px solid #b7a58b;
+            padding: 2.8rem 2rem 2.2rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #3a322b;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #6b5f53;
+            border-top: 1px solid #d6ccc1;
+            padding-top: 0.8rem;
+            margin-top: 0.3rem;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        /* 背景说明 — 类似编者按 */
+        .background-note {
+            background: #f5f0ea;
+            padding: 1.6rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0 2.6rem;
+            font-size: 0.98rem;
+            color: #3d3731;
+            box-shadow: inset 0 0 0 1px #e5dbd0;
+        }
+
+        .background-note strong {
+            font-weight: 600;
+            color: #5a4c3f;
+        }
+
+        /* 三段自然介绍 */
+        .intro-section {
+            margin: 2.2rem 0;
+        }
+
+        .intro-block {
+            margin-bottom: 2.2rem;
+        }
+
+        .intro-block h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #4b3f35;
+            border-bottom: 1px solid #ddd3c7;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .intro-block p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* 引用块 / 提示框 */
+        .pull-quote {
+            background: #efe9e0;
+            padding: 1.4rem 2rem;
+            margin: 2rem 0;
+            border-radius: 30px 8px 30px 8px;
+            font-size: 1.05rem;
+            color: #3e352e;
+            border-left: 3px solid #b7a58b;
+            font-style: normal;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .pull-quote span.quote-mark {
+            font-size: 2.2rem;
+            line-height: 1;
+            color: #a3907d;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .tip-box {
+            background: #f2ece4;
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            margin: 2rem 0 1.8rem;
+            border: 1px solid #ddd2c4;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .tip-box .tip-icon {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #7d6b59;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #dbd0c4;
+            text-align: center;
+            font-size: 1rem;
+            color: #5e544b;
+        }
+
+        .footer-note a {
+            color: #4d3f33;
+            text-decoration: none;
+            border-bottom: 1px solid #b7a58b;
+            padding-bottom: 1px;
+            transition: border 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #4d3f33;
+            color: #1f1a16;
+        }
+
+        .footer-note .small-meta {
+            display: block;
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: #92877c;
+            letter-spacing: 0.5px;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            body {
+                padding: 0 0.8rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .intro-block h2 {
+                font-size: 1.3rem;
+            }
+            .pull-quote {
+                padding: 1rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            .tip-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.2rem;
+            }
+            .footer-note {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .page-wrap {
+                padding: 1.5rem 0.2rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 首页横幅 -->
+    <header class="hero">
+        <h1>乐鱼 · 一种浏览的质地</h1>
+        <div class="sub">稳定、安静、不追逐</div>
+    </header>
+
+    <!-- 背景说明 -->
+    <div class="background-note">
+        <strong>编者按</strong> —— 信息如潮，择路而栖。<br>
+        乐鱼并非喧哗的入口，它更接近一条常被提起的小径：当你需要一处可以反复回访、不轻易改道的界面，它便在那里。本文从日常使用的角度，记录下关于这个站点的几个切面。
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <section class="intro-section">
+        <div class="intro-block">
+            <h2>稳定的位置感</h2>
+            <p>网络里许多页面不断变换布局与域名，偶尔会让人失去方向。乐鱼在结构上维持着一种朴素的克制——导航清晰，层级不深，更新有迹可循。长期使用者会发现，它的核心入口始终如一，没有突然的跳转或令人困惑的重定向。这种稳定并非刻意复古，而是一种对「可依靠」的坚持。无论你是初次到访还是再次回来，界面呈现的秩序感都能让你很快找到熟悉的路径。</p>
+        </div>
+
+        <div class="intro-block">
+            <h2>内容与节奏</h2>
+            <p>乐鱼的内容偏向于资讯整理与日常阅读，不追求时效轰炸，也不堆叠弹窗与浮层。每一个信息块都经过基础的归类，阅读时视线可以沿着自然的留白移动。页面中的文字排版照顾到了长时间浏览的舒适度，字号、行距与对比度都经过调整，减少了视觉疲劳。对于需要静下心来了解某个话题的用户，这种节奏比快节奏推送更友好。</p>
+        </div>
+
+        <div class="intro-block">
+            <h2>场景与习惯</h2>
+            <p>不少使用者习惯在固定时段打开乐鱼，把它当作一天中信息收尾的一站。它的加载响应平稳，即使在移动网络波动时，结构也不会破碎。你可以把它收藏在浏览器的书签栏里，或者直接记住它的地址——不必担心明天它变作另一副面孔。这种慢变量带来的踏实感，恰好适应了那些希望「让浏览回归浏览」的人。</p>
+        </div>
+    </section>
+
+    <!-- 引用块（类似杂志引语） -->
+    <div class="pull-quote">
+        <span class="quote-mark">“</span> 乐鱼的底色不是功能，而是可预期。你不需要每次重新学习如何使用它。
+    </div>
+
+    <!-- 提示框（FAQ摘要风格） -->
+    <div class="tip-box">
+        <span class="tip-icon">⏺</span>
+        <div><strong>常见疑问简述</strong><br>
+        问：乐鱼需要注册吗？—— 大部分浏览无需登录，可直接阅读。<br>
+        问：页面适合手机阅读吗？—— 已作适配，缩放与段落均经过响应式调整。<br>
+        问：内容更新频率如何？—— 保持日常更新，不堆积旧闻，有存档可查阅。</div>
+    </div>
+
+    <!-- 页尾访问提示 — 自然嵌入链接 -->
+    <div class="footer-note">
+        <p>
+            如果你想进一步了解它的日常面貌，可以前往 
+            <a href="https://zhportal-leyu.com">乐鱼</a> 
+            看一看它的实际页面。那里没有多余的介绍，只有网站本身。
+        </p>
+        <span class="small-meta">—— 一份安静的索引 · 杂志专题 2025 ——</span>
+    </div>
+
+</div>
+</body>
+</html>
